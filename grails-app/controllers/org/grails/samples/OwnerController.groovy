@@ -53,10 +53,19 @@ class OwnerController {
 		if (!request.post) {
 			return
 		}
-
+		def owners = Owner.findAllByLastName(params.lastName)
+		if (!owners) {
+			return [message: 'owners.not.found']
+		}
+		if (owners.size() > 1) {
+			render view: 'selection', model: [owners: owners]
+		}
+		else {
+			redirect action: 'show', id: owners[0].id
+		}
 		
 
-		forward action: "test"
+		 
 	}
 	
 	def test(){
