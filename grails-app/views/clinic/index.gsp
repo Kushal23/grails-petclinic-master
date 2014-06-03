@@ -10,7 +10,7 @@
 		<ul>
 			<li><g:link controller="owner" action="find">Find owner</g:link></li>
 			<li><g:link action="vets">Display all veterinarians</g:link></li>
-			<li><g:link action="tutorial">Tutorial</g:link></li>
+			 
 		</ul>
 	</body>
 </html>
